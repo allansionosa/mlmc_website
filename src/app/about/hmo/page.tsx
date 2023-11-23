@@ -2,10 +2,11 @@
 import BreadCrumb from "@/app/lib/BreadCrumb";
 import { Menu, MenuProps, Input } from "antd";
 import React, { useEffect, useState } from "react";
-import { items } from "../page";
+
 import { BsArrowRight } from "react-icons/bs";
 import { lists } from "./HmoList";
 import Image from "next/image";
+import { MenuItems } from "@/app/components/MenuItems";
 type ListItem = {
   id: number;
   label: string;
@@ -42,14 +43,8 @@ const page = () => {
           title={pageTitle}
         />
       </div>
-      <div className=" bg-gray-300 py-3">
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={items}
-          className="bg-gray-300 flex justify-center"
-        />
+      <div>
+        <MenuItems current={current} onClick={onClick} />
       </div>
       <section className="container px-10 lg:px-48">
         <div className=" rounded flex justify-between bg-blue-800 text-white h-16 my-10">

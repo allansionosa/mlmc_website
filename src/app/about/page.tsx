@@ -3,32 +3,8 @@ import BreadCrumb from "../lib/BreadCrumb";
 import { Menu, MenuProps } from "antd";
 import Link from "next/link";
 import { useState } from "react";
-export const items: MenuProps["items"] = [
-  {
-    label: <Link href="/about">History</Link>,
-    key: "/about",
-  },
-  {
-    label: <Link href="/about/Vission&Mission">Vision/Mision</Link>,
-    key: "/about/Vission&Mission",
-  },
-  {
-    label: <Link href="/about/company-profile">Company Profile</Link>,
-    key: "/about/company-profile",
-  },
-  {
-    label: (
-      <Link href="/about/officers&board-directors">
-        Officers and Board Directors
-      </Link>
-    ),
-    key: "/about/officers&board-directors",
-  },
-  {
-    label: <Link href="/about/hmo">HMO</Link>,
-    key: "/about/hmo",
-  },
-];
+import { MenuItems } from "../components/MenuItems";
+
 const Page = () => {
   const [current, setCurrent] = useState("/about");
 
@@ -45,14 +21,8 @@ const Page = () => {
           title={pageTitle}
         />
       </div>
-      <div className="">
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={items}
-          className="flex justify-center "
-        />
+      <div>
+        <MenuItems current={current} onClick={onClick} />
       </div>
       <div className="grid grid-cols-1  gap-5 sm:mx-36 mx-10 my-20 indent-10 text-slate-950 text-[18px] ">
         <p>

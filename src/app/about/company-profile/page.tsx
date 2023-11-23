@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import BreadCrumb from "@/app/lib/BreadCrumb";
-import { items } from "../page";
+
 import { Menu, MenuProps } from "antd";
+import { MenuItems } from "@/app/components/MenuItems";
 const page = () => {
   const [current, setCurrent] = useState("/about/company-profile");
   const onClick: MenuProps["onClick"] = (e) => {
@@ -18,14 +19,8 @@ const page = () => {
           title={pageTitle}
         />
       </div>
-      <div className=" bg-gray-300 py-3 ">
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={items}
-          className="bg-gray-300flex justify-center"
-        />
+      <div>
+        <MenuItems current={current} onClick={onClick} />
       </div>
       <div className="sm:mx-20 mx-10 my-20 ">
         <div className="grid gap-5">
