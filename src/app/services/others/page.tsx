@@ -9,7 +9,7 @@ const { Meta } = Card;
 const page = () => {
   const pageTitle = `Others`;
   return (
-    <div className="overflow-hidden ">
+    <div className="overflow-hidden">
       <div>
         <BreadCrumb
           items={[{ title: "Services" }, { title: pageTitle }]}
@@ -17,8 +17,8 @@ const page = () => {
         />
       </div>
 
-      <div className="px-10 py-10">
-        <ul className=" grid lg:grid-cols-4 sm:grid-cols-2  gap-5">
+      <section className="container my-20 lg:px-48">
+        <ul className="flex justify-center  gap-5 flex-wrap ">
           {otherList.map((list) => (
             <li key={list.id}>
               <Card
@@ -27,10 +27,10 @@ const page = () => {
                   <Image
                     alt={list.alt}
                     src={list.src}
-                    width={0}
+                    width={300}
+                    priority
                     height={0}
-                    sizes="100vw"
-                    className="w-full h-full object-contain"
+                    className="h-[200px]"
                   />
                 }
               >
@@ -39,7 +39,7 @@ const page = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </div>
   );
 };

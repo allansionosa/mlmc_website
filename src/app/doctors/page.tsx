@@ -2,7 +2,6 @@
 import BreadCrumb from "@/app/lib/BreadCrumb";
 import { List, Row } from "antd";
 import Image from "next/image";
-
 import React from "react";
 const data = Array.from({ length: 23 }).map((_, i) => ({
   title: `Manalo, Celeste Cordova ${i}`,
@@ -14,13 +13,13 @@ const data = Array.from({ length: 23 }).map((_, i) => ({
     "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
 }));
 
-// ... (imports remain the same)
-
 const page = () => {
   const pageTitle = `Doctors`;
   return (
     <div className="overflow-hidden">
-      <div>{/* ... */}</div>
+      <div>
+        <BreadCrumb items={[{ title: "Doctors" }]} title={pageTitle} />
+      </div>
       <section className="sm:px-44 sm:py-10 py-3">
         <List
           itemLayout="vertical"

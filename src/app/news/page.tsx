@@ -27,8 +27,13 @@ const Page = () => {
     sortData(sortBy);
   }, [sortBy]);
   const getFilteredData = (data: NewsItem[], type: string | null) => {
-    if (type === null) {
+    if (type === null || type === "All") {
       return data;
+    }
+    if (type.includes("Event") && type.includes("Promo")) {
+      return data.filter(
+        (item) => item.value === "Event" || item.value === "Promo"
+      );
     }
     return data.filter((item) => item.value === type);
   };
@@ -83,9 +88,9 @@ const Page = () => {
             style={{ width: 120 }}
             onChange={handleChangeType}
             options={[
-              { value: "Event", label: "Event" },
+              { value: "All", label: "All" },
               { value: "News", label: "News" },
-              { value: "Promo", label: "Promo" },
+              { value: "Event&Promo", label: "Event & Promo" },
             ]}
           ></Select>
         </div>
@@ -99,10 +104,10 @@ const Page = () => {
                     <Image
                       alt={list.alt}
                       src={list.src}
-                      width={0}
+                      width={300}
+                      priority
                       height={0}
-                      sizes="100vw"
-                      className="w-full h-full object-contain"
+                      className="h-[200px]"
                     />
                   }
                 >

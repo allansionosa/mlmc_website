@@ -3,6 +3,7 @@ import { Menu, MenuProps, Button, Drawer, Affix } from "antd";
 import { AiOutlineMenu } from "react-icons/ai";
 import React, { useState } from "react";
 import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
 const items: MenuProps["items"] = [
   {
@@ -14,12 +15,16 @@ const items: MenuProps["items"] = [
     key: "/about",
   },
   {
-    label: <a>Services</a>,
+    label: (
+      <div className="flex items-center gap-x-1">
+        Services <IoIosArrowDown />
+      </div>
+    ),
     key: "/services",
     children: [
       {
         label: <Link href="/services">Laboratory</Link>,
-        key: "/laboratory/services",
+        key: "/services/laboratory",
       },
       {
         label: (
@@ -64,7 +69,12 @@ export const Nav = () => {
     setOpen(true);
   };
 
-  const onClose = () => {
+  const closeDrawer = () => {
+    setOpen(false);
+  };
+
+  const onClose: MenuProps["onClick"] = (e) => {
+    setCurrent(e.key);
     setOpen(false);
   };
 
@@ -81,7 +91,7 @@ export const Nav = () => {
           selectedKeys={[current]}
           mode="horizontal"
           items={items}
-          className="flex justify-center"
+          className="flex justify-center font-bold"
         />
       </div>
       <Affix>
@@ -95,7 +105,7 @@ export const Nav = () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className=" w-56  shrink-0 "
+                  className=" w-56"
                 />
               </a>
             </div>
@@ -106,7 +116,7 @@ export const Nav = () => {
               <Drawer
                 size="large"
                 placement="right"
-                onClose={onClose}
+                onClose={closeDrawer}
                 open={open}
               >
                 <Menu

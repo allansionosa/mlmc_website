@@ -27,9 +27,9 @@ const BreadCrumb = ({ items, title, wImage = true }: BreadcrumbsProps) => {
   return (
     <>
       {wImage && (
-        <div className=" bg-primary w-full h-40 md:h-64 relative">
+        <div className="bg-primary w-full h-40 md:h-64 relative">
           <Image
-            src="/about.jpg"
+            src="/mlmc-building.webp"
             alt=""
             fill
             style={{
@@ -37,8 +37,9 @@ const BreadCrumb = ({ items, title, wImage = true }: BreadcrumbsProps) => {
               objectPosition: "center",
             }}
           />
+          <div className=" bg-blue-700 bg-opacity-50 w-full h-full absolute top-0 left-0" />
           <div className=" bg-secondary w-full h-4" />
-          <div className="bg-milk py-5">
+          <div className="py-5">
             <div className="container absolute top-16 left-10 sm:ml-28">
               <Breadcrumb separator=">" items={_items} />
               <h1 className="pt-1 text-2xl md:text-3xl text-main uppercase tracking-wide font-semibold text-yellow-400">

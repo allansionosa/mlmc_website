@@ -45,7 +45,7 @@ const page = () => {
             width={500}
             priority
             height={0}
-            className="h-[250px] "
+            className="h-[250px]"
           />
           <div className="absolute sm:top-32 top-20 left-3 text-white text-base font-bold">
             "To promote, restore and maintain the health of all people we serve"

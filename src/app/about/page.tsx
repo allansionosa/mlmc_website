@@ -29,7 +29,7 @@ export const items: MenuProps["items"] = [
     key: "/about/hmo",
   },
 ];
-const page = () => {
+const Page = () => {
   const [current, setCurrent] = useState("/about");
 
   const onClick: MenuProps["onClick"] = (e) => {
@@ -183,4 +183,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

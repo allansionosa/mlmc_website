@@ -39,7 +39,7 @@ const page = () => {
           className="flex justify-center "
         />
       </div>
-      <div className="px-20 py-20">
+      <div className="px-20 py-20 bg-transparent">
         <Collapse
           items={item}
           defaultActiveKey={["1"]}

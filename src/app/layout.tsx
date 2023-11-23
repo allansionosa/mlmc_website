@@ -29,27 +29,27 @@ export default function RootLayout({
           },
           components: {
             Collapse: {
-              // headerBg: "#0000e6",
+              headerBg: "#0000e6",
+              colorTextHeading: "#ffffff",
             },
             Breadcrumb: {
-              itemColor: "#231F20",
-              linkColor: "#231F20",
+              itemColor: "#FFFFFF",
+              linkColor: "#FFFFFF",
               linkHoverColor: "#FFFFFF",
-              colorBgTextHover: "#BA0C2F",
-              lastItemColor: "#BA0C2F",
+              colorBgTextHover: "#0000e6",
+              lastItemColor: "#FACC15",
+              separatorColor: "#FFFFFF",
             },
             Menu: {
-              // fontSize: 15,
               darkItemBg: "#0000e6",
-              // darkDangerItemActiveBg: "#ffff00",
-              darkItemSelectedColor: "#ffff00",
-              darkItemColor: "#FFFFFF",
-              darkItemHoverColor: "#ffff00",
 
-              // // darkSubMenuItemBg: "#003459",
-              // itemHoverBg: "#ffff00",
-
-              // itemColor: '#003459',
+              darkItemHoverColor: "#FFFFFF",
+              darkItemSelectedColor: `#ffff00 !important`,
+              darkItemSelectedBg: "#d3d5db",
+              // darkSubMenuItemBg: "#FFFFFF",
+            },
+            Card: {
+              colorBgContainer: "#d3d5db",
             },
           },
         }}
@@ -58,7 +58,6 @@ export default function RootLayout({
           <StyledRegistry>
             <Top />
             <Nav />
-
             <main>{children}</main>
             <Footer />
           </StyledRegistry>

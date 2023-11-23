@@ -51,8 +51,8 @@ const page = () => {
           className="bg-gray-300 flex justify-center"
         />
       </div>
-      <div className="  grid grid-cols-1 px-10">
-        <div className="flex justify-between bg-blue-800 text-white h-16 my-10">
+      <section className="container px-10 lg:px-48">
+        <div className=" rounded flex justify-between bg-blue-800 text-white h-16 my-10">
           <div className="ml-10 mt-4">HMO Online Approval</div>
           <div className="mr-10 mt-5">
             <BsArrowRight size={30} />
@@ -65,7 +65,7 @@ const page = () => {
             placeholder="Search for HMO provider"
           />
         </div>
-        <ul className="gap-5 grid sm:grid-cols-3 md:grid-cols-4 grid-cols-2 my-10">
+        <ul className="gap-5 flex justify-center my-10 flex-wrap ">
           {searchResults
             .filter((result) => {
               return searchTerm.toLowerCase() === ""
@@ -77,16 +77,16 @@ const page = () => {
                 <Image
                   src={result.src}
                   alt=""
-                  width={0}
+                  width={300}
+                  priority
                   height={0}
-                  sizes="100vw"
-                  className="w-full h-full object-contain"
+                  className="h-[200px]"
                 />
                 <title> {result.label}</title>
               </li>
             ))}
         </ul>
-      </div>
+      </section>
     </div>
   );
 };
