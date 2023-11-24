@@ -1,60 +1,106 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import BreadCrumb from "../lib/BreadCrumb";
-import { Descriptions, DescriptionsProps, Input } from "antd";
-const items: DescriptionsProps["items"] = [
-  {
-    key: "1",
-    label: "Slots",
-    children: "1",
-  },
-  {
-    key: "2",
-    label: "Date Posted",
-    children: "November 10, 2023",
-  },
-];
+import { Input } from "antd";
+import { careerList } from "./CareerList";
+
+interface CareersItem {
+  id: number;
+  slots: string;
+  job_title: string;
+  date_posted: string;
+}
+
 const page = () => {
   const pageTitle = "Careers";
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState<CareersItem[]>([]);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setSearch(value);
+  };
+  useEffect(() => {
+    setSearchResults(careerList);
+  }, [careerList]);
   return (
     <div className="overflow-hidden">
       <div>
         <BreadCrumb items={[{ title: "Careers" }]} title={pageTitle} />
       </div>
-      <section className="container my-20 sm:mx-20 px-5">
-        <div className="flex justify-center">
+      <section className="container my-20 max-w-[1150px] m-auto px-5">
+        <div className="mb-10">
           <Input
             placeholder="Search for Job's title"
             size="large"
-            style={{ width: 900 }}
+            value={search}
+            onChange={handleInputChange}
           />
         </div>
-        <div className=" grid justify-items-center">
-          <div className="bg-gray-200 my-10 border pt-3 rounded ">
-            <div className=" flex md:flex-row flex-col">
-              <Descriptions
-                title="REGISTERED MEDICAL TECHNOLOGIST"
-                items={items}
-                className="sm:w-[800px] pl-3"
-              />
-              <div className=" pt-5 pr-3 flex justify-center border border-gray-300 sm:border-none">
-                View Details
+
+        <div className="grid gap-y-5">
+          {searchResults
+            .filter((list) => {
+              return search.toLowerCase() === ""
+                ? list
+                : list.job_title.toLowerCase().includes(search.toLowerCase());
+            })
+            .map((list) => (
+              <div className="flex flex-col lg:flex-row" key={list.id}>
+                <div className="py-5 px-4 grow rounded bg-gray-100">
+                  <div>
+                    <h2 className="text-primary font-semibold text-xl pb-5 uppercase">
+                      {list.job_title}
+                    </h2>
+                    <div className="flex gap-x-5">
+                      <div className="flex flex-col gap-y-1">
+                        <label className="font-medium">Slots</label>
+                        <span>{list.slots}</span>
+                      </div>
+                      <div className="flex flex-col gap-y-1">
+                        <label className="font-medium">Date Posted</label>
+                        <span>{list.date_posted}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  className="grid justify-center py-3 border-2 bg-gray-100  hover:bg-gray-200 flex-shrink-0 lg:border-0 items-center lg:px-5 rounded"
+                  href="/careers"
+                >
+                  <span className="group-hover:underline underline-offset-2 group-hover:text-primary">
+                    View Details
+                  </span>
+                </a>
               </div>
-            </div>
-          </div>
-          <div className="bg-gray-200 my-10 border pt-3 rounded ">
-            <div className=" flex md:flex-row flex-col">
-              <Descriptions
-                title="REGISTERED MEDICAL TECHNOLOGIST"
-                items={items}
-                className="sm:w-[800px] pl-3"
-              />
-              <div className=" pt-5 pr-3 flex justify-center border border-gray-300 sm:border-none">
-                View Details
-              </div>
+            ))}
+        </div>
+      </section>
+      <div className="mb-28 max-w-[1120px] m-auto ">
+        <div className="md:container">
+          <div className=" bg-center bg-cover bg-[url('/building.jpg')] ">
+            <div className=" bg-blue-800 opacity-80 py-6 px-5 my-10 text-white ">
+              <h5 className="text-lg font-medium uppercase ">Contact Us</h5>
+              <ul className="pt-3 grid gap-y-1">
+                <li>
+                  Adress:
+                  <span className="font-medium">
+                    llustre Ave., Brgy. Palanas, Lemery Batangas
+                  </span>
+                </li>
+                <li>
+                  Email:
+                  <span className="font-medium">
+                    customerservice@mlmc.com.ph
+                  </span>
+                </li>
+                <li>
+                  Contact No.: <span className="font-medium">0917-509-048</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

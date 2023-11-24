@@ -2,7 +2,7 @@
 import { Menu, MenuProps, Button, Drawer, Affix } from "antd";
 import { AiOutlineMenu } from "react-icons/ai";
 import React, { useState } from "react";
-import Link from "next/link";
+
 import Image from "next/image";
 import { items } from "./NavItems";
 
@@ -28,7 +28,7 @@ export const Nav = () => {
   };
 
   return (
-    <div>
+    <section>
       <div className="hidden sm:block">
         <Menu
           theme="dark"
@@ -75,6 +75,6 @@ export const Nav = () => {
           </div>
         </div>
       </Affix>
-    </div>
+    </section>
   );
 };

@@ -55,9 +55,11 @@ export default function RootLayout({
       >
         <body className={inter.className}>
           <StyledRegistry>
-            <Top />
-            <Nav />
-            <main>{children}</main>
+            <main>
+              <Top />
+              <Nav />
+              {children}
+            </main>
             <Footer />
           </StyledRegistry>
         </body>

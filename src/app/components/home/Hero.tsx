@@ -1,7 +1,4 @@
 import Image from "next/image";
-import { FaUserDoctor } from "react-icons/fa6";
-import { BsPerson } from "react-icons/bs";
-import { LiaNotesMedicalSolid } from "react-icons/lia";
 
 const STYLE = {
   portal:
@@ -9,36 +6,31 @@ const STYLE = {
 };
 
 export const Hero = () => (
-  <div>
-    <div className="relative">
-      <div className="">
-        <Image
-          src="/hospital.jpg"
-          blurDataURL={"/hospital.jpg"}
-          width={0}
-          placeholder="blur"
-          height={0}
-          sizes="100vw"
-          // fill
-          className="w-full h-96"
-          alt="Metro Lemery Medical Center"
-        />
-      </div>
-      <div className="absolute top-20 left-10 sm:left-60 text-white sm:top-24">
-        <span className="text-2xl sm:text-6xl  font-mono text-yellow-300">
-          STRIVE FOR EXCELLENCE
-        </span>
-        <div className=" text-[#0000e6]">
-          <p className="text-lg sm:text-3xl  font-serif">
-            Commited to Excellence in Total Healthcare
-          </p>
-          <button className="text-white font-sans font-normal sm:text-lg">
-            Learn More
-          </button>
+  <section>
+    <div className="bg-slate-200 h-[644px] md:h-[430px] lg:h-[630px] w-full relative">
+      <Image
+        src="/hospital.jpg"
+        blurDataURL={"/hospital.jpg"}
+        placeholder="blur"
+        fill
+        sizes="100vw"
+        loading="lazy"
+        className="absolute w-full h-full object-cover bg-transparent"
+        alt="Metro Lemery Medical Center"
+      />
+      <div className="absolute bottom-0 right-0 left-0 top-0 overlay md:px-12">
+        <div className="container grid items-center content-center h-full w-full text-center text-white md:text-left">
+          <h2 className=" text-yellow-400 uppercase font-semibold tracking-widest text-xl drop-shadow lg:text-2xl">
+            STRIVE FOR EXCELLENCE
+          </h2>
+          <h1 className=" md:text-5xl lg:text-6xl  font-medium lg:w-[60%] font-corsiva text-blue-600 py-8 ">
+            Committed to Excellence in Total Healthcare
+          </h1>
+          <a href="/">Learn more</a>
         </div>
       </div>
     </div>
-    <div className="absolute top-[430px] sm:top-[500px] left-2 right-2 flex justify-center font-sans gap-10 sm:mx-44">
+    {/* <div className="absolute top-[430px] sm:top-[500px] left-2 right-2 flex justify-center font-sans gap-10 sm:mx-44">
       <button className={STYLE.portal}>
         <div className=" sm:mt-5 ">Doctor Portal</div>
         <div className=" sm:mt-5">
@@ -83,8 +75,8 @@ export const Hero = () => (
           alt="METRO LEMERY MEDICAL CENTER IMAGE"
         />
       </div>
-    </div>
-  </div>
+    </div> */}
+  </section>
 );
 
 export default Hero;

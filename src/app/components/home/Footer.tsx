@@ -1,56 +1,126 @@
 import Image from "next/image";
+import { FaRegEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div>
-      <div className=" bg-blue-800 text-white sm:flex justify-center  gap-20 py-10 flex-1 text-center">
-        <div className="font-sans grid grid-cols-1 justify-items-center">
-          <Image
-            src="/logo.jpg"
-            alt="mlmc image"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className=" w-20  shrink-0"
-          />
-
-          <p>Commited to Excellence in Total Healthcare</p>
-          <p>Email Address</p>
-          <p>customerservice@mlmc.com.ph</p>
+    <footer className="bg-blue-800 text-white">
+      <div className=" container py-16 grid gap-5 items-start md:grid-cols-2 lg:grid-cols-5 max-w-screen-xl m-auto">
+        <div className="grid gap-y-10 lg:col-span-2">
+          <a href="/">
+            <Image
+              src="/mlmc-logo.png"
+              alt="mlmc image"
+              width={280}
+              height={0}
+            />
+          </a>
+          <h3 className="text-lg lg:text-base italic font-semibold">
+            Commited to Excellence in Total Healthcare
+          </h3>
+          <div className="text-lg lg:text-base">
+            <div className="flex items-center gap-x-1">
+              <FaRegEnvelope />
+              Email Address
+            </div>
+            <a
+              href="mailto:customerservice@mlmc.com.ph"
+              target="blank"
+              className="underline underline-offset-1 lg:text-sm"
+            >
+              customerservice@mlmc.com.ph
+            </a>
+          </div>
         </div>
         <div>
-          <p>About MLMC</p>
-          <ul className=" font-light">
-            <li>History</li>
-            <li>Vission/Mission</li>
-            <li>Company Profile</li>
-            <li>Officers and Board Directors</li>
-            <li>HMO</li>
+          <ul className="grid gap-y-5">
+            <li>
+              <span className="text-lg font-medium lg:text-base">About</span>
+              <ul className="md:text-sm">
+                <li>
+                  {" "}
+                  <a href="/about">History</a>
+                </li>
+                <li>
+                  {" "}
+                  <a href="/about/Vission&Mission">Vission/Mission</a>
+                </li>
+                <li>
+                  <a href="/about/company-profile">Company Profile</a>
+                </li>
+                <li>
+                  <a href="/about/officers&board-directors">
+                    Officers and Board Directors
+                  </a>
+                </li>
+                <li>
+                  <a href="/about/hmo">HMO</a>
+                </li>
+              </ul>
+            </li>
+            <li className="text-lg font-medium lg:text-base">
+              <a href="/hmo/approval">HMO Approval</a>
+            </li>
           </ul>
         </div>
         <div>
-          <p>HMO Approval</p>
-          <ul className=" font-light">
-            <li>Services</li>
-            <li>Online Results</li>
-            <li>Patients Portal</li>
-            <li>Doctors Portal</li>
+          <ul className="grid gap-y-5">
+            <li>
+              <span className="text-lg font-medium lg:text-base">Services</span>
+              <ul className="md:text-sm">
+                <li>
+                  <a href="/services">Laboratory</a>
+                </li>
+                <li>
+                  <a href="/services/radiology">
+                    Radiology & Diagnostic Procedures
+                  </a>
+                </li>
+                <li>
+                  <a href="/services">Out-Patient Department</a>
+                </li>
+                <li>
+                  <a href="/services/others">Others</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="text-lg font-medium lg:text-base">
+                Online Results
+              </span>
+              <ul className="md:text-sm">
+                <li>
+                  <a href="/">Patients Portal</a>
+                </li>
+                <li>
+                  {" "}
+                  <a href="/">Doctors Portal</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div>
-          <p>Doctors</p>
-          <ul className=" font-light">
-            <li>News & Events</li>
-            <li>Careers</li>
+          <ul className="grid gap-y-5">
+            <li className="text-lg font-medium lg:text-base">
+              <a href="/doctors">Doctors</a>
+            </li>
+            <li className="text-lg font-medium lg:text-base">
+              {" "}
+              <a href="/news">News & Events</a>
+            </li>
+            <li lang="text-lg font-medium lg:text-base">
+              {" "}
+              <a href="/careers">Careers</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="bg-yellow-400 flex justify-center">
+      <div className="bg-yellow-300 flex justify-center">
         <p className=" font-normal text-blue-700 py-3 text-sm px-4">
           2023 METRO LEMERY MEDICAL CENTER ALL RIGHTS RESERVED | TERMS AND
           CONDITION | PRIVACY POLICY
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

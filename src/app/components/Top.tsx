@@ -6,7 +6,7 @@ import { SlLocationPin } from "react-icons/sl";
 
 export const Top = () => {
   return (
-    <div className=" md:py-5 py-0 ">
+    <section className=" md:py-5 py-0 ">
       <div className="flex justify-between">
         <div className="ml-32 hidden sm:block  shrink-0">
           <Link href="/">
@@ -47,6 +47,6 @@ export const Top = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

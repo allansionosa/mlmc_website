@@ -1,7 +1,7 @@
 "use client";
 import BreadCrumb from "@/app/lib/BreadCrumb";
-import { Collapse, CollapseProps, Menu, MenuProps } from "antd";
-import { useState } from "react";
+import { Collapse, CollapseProps } from "antd";
+
 import { radioList } from "./RadiologyList";
 
 const item: CollapseProps["items"] = radioList.map((item) => ({
@@ -17,13 +17,7 @@ const page = () => {
   const onChange = (key: string | string[]) => {
     // console.log(key);
   };
-  const [current, setCurrent] = useState("/services/radiology");
-
-  const onClick: MenuProps["onClick"] = (e) => {
-    // console.log("click ", e);
-    setCurrent(e.key);
-  };
-  const pageTitle = `Radiology and Diagnostic Procedures`;
+  const pageTitle = `Radiology & Diagnostic Procedures`;
   return (
     <div className="overflow-hidden">
       <div>

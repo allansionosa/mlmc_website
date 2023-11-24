@@ -31,7 +31,6 @@ const page = () => {
   };
   const [current, setCurrent] = useState("/about/hmo");
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
   const pageTitle = `HMO Accreditation`;
