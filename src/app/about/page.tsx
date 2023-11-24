@@ -9,7 +9,6 @@ const Page = () => {
   const [current, setCurrent] = useState("/about");
 
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
   const pageTitle = `History`;
@@ -62,8 +61,8 @@ const Page = () => {
           multi-specialty clinics for the convenience of our clientele. Major
           renovation of the lobby has been made to provide an admitting section
           making for a more spacious entrance. Kaleidoscope, a center of therapy
-          for the challenged children, was the arm taht provided assistance to
-          our special children.
+          for the challenged , was the arm taht provided assistance to our
+          special children.
         </p>
         <p>
           For the year 2013, we continued to make our services better and have

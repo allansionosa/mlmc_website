@@ -36,6 +36,7 @@ export const MenuItems = ({ current, onClick }: MenuItemsProps) => {
         selectedKeys={[current]}
         mode="horizontal"
         className="flex justify-center"
+        items={items}
       >
         {items.map((item) => (
           <Menu.Item key={item.key}>

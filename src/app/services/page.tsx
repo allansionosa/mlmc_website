@@ -29,7 +29,7 @@ const page = () => {
         />
       </div>
 
-      <div className="px-10 py-10">
+      <div className="py-10 lg:mx-96 mx-10">
         <div>
           <Input
             value={search}
@@ -42,7 +42,7 @@ const page = () => {
             .filter((list) => {
               return search.toLowerCase() === ""
                 ? list
-                : list.service.toLowerCase().includes(search);
+                : list.service.toLowerCase().includes(search.toLowerCase());
             })
             .map((list) => (
               <li key={list.id}>{list.service}</li>

@@ -29,8 +29,8 @@ export default function RootLayout({
           },
           components: {
             Collapse: {
-              headerBg: "#0000e6",
-              colorTextHeading: "#ffffff",
+              // headerBg: "#0000e6",
+              // colorTextHeading: "#ffffff",
             },
             Breadcrumb: {
               itemColor: "#FFFFFF",
@@ -42,7 +42,6 @@ export default function RootLayout({
             },
             Menu: {
               darkItemBg: "#0000e6",
-
               darkItemHoverColor: "#FFFFFF",
               darkItemSelectedColor: `#ffff00 !important`,
               darkItemSelectedBg: "#d3d5db",

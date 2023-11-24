@@ -7,7 +7,11 @@ import { radioList } from "./RadiologyList";
 const item: CollapseProps["items"] = radioList.map((item) => ({
   key: `${item.id}`,
   label: ` ${item.label}`,
-  children: <p key={item.id}>{item.content}</p>,
+  children: (
+    <p key={item.id} className="">
+      {item.content}
+    </p>
+  ),
 }));
 const page = () => {
   const onChange = (key: string | string[]) => {
@@ -29,7 +33,7 @@ const page = () => {
         />
       </div>
 
-      <div className="px-20 py-20 bg-transparent">
+      <div className="sm:px-96 py-20 font-sans mx-10">
         <Collapse
           items={item}
           defaultActiveKey={["1"]}

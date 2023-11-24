@@ -46,7 +46,7 @@ const page = () => {
       <div>
         <MenuItems current={current} onClick={onClick} />
       </div>
-      <section className="container px-10 lg:px-48">
+      <section className="container px-10 max-w-screen-md m-auto">
         <div className=" rounded flex justify-between bg-blue-800 text-white h-16 my-10">
           <div className="ml-10 mt-4">HMO Online Approval</div>
           <div className="mr-10 mt-5">
