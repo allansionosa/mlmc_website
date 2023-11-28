@@ -1,17 +1,12 @@
 export const radioList = [
   {
     id: 1,
-    label: "weqweqweqweq",
-    content: "eweqweqweqweqweqweqweqeqweqweqweqweqeqweqw",
-  },
-  {
-    id: 2,
-    label: "ffdfdfddf",
-    content: "keqweqweqweeeew",
-  },
-  {
-    id: 3,
-    label: "qwertyuio",
-    content: "vxkl;cvxc",
+    content: {
+      first: "Cystoscopy with retrograde pyelography (CRGP)",
+      second: "IOC (intra-operative cholangiogram)",
+      third: "PCNL (percutaneous nephrolithotomy or stone extraction)",
+      fourth:
+        "Orthopedic procedures (open reduction and internal fixation, etc.)",
+    },
   },
 ];

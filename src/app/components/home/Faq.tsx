@@ -44,83 +44,73 @@ export const Faq = () => {
     // console.log(key);
   };
   return (
-    <div className="relative overflow-hidden">
-      <Image
-        src="/faq-background.jpg"
-        alt=""
-        width={0}
-        height={0}
-        className="w-full sm:h-[100vh] h-[120vh] object-cover"
-      />
-      <div className="absolute inset-0 grid justify-items-center sm:mt-28 mx-5">
-        <div className="absolute top-8 grid sm:grid-cols-2">
-          <div className="grid md:justify-end">
-            <div className="font-bold text-center">GET IN TOUCH WITH US</div>
-            <div className=" text-2xl text-blue-700 text-center">
-              Contact Us
+    <section
+      className="bg-center bg-cover bg-[url('/faq-background.jpg')] "
+      id="contact"
+    >
+      <div className="backdrop-blur-lg bg-white/30 py-20">
+        <div className="container grid gap-10 lg:grid-cols-2 max-w-screen-md m-auto px-5">
+          <div>
+            <div className="pb-5">
+              <div>
+                <h3 className="font-bold text-center">GET IN TOUCH WITH US</h3>
+                <h2 className=" text-2xl text-blue-700 text-center">
+                  Contact Us
+                </h2>
+              </div>
             </div>
-            <div>
-              <Form
-                {...layout}
-                name="nest-messages"
-                onFinish={onFinish}
-                style={{ maxWidth: 500 }}
-                validateMessages={validateMessages}
-              >
-                <Space
-                  style={{ display: "flex", marginBottom: 8 }}
-                  align="baseline"
-                >
-                  <Form.Item name={["firstname"]} rules={[{ required: true }]}>
-                    <Input placeholder="First Name" />
-                  </Form.Item>
-                  <Form.Item name={["lastname"]} rules={[{ required: true }]}>
-                    <Input placeholder="Last Name" />
-                  </Form.Item>
-                </Space>
-                <Space
-                  style={{ display: "flex", marginBottom: 8 }}
-                  align="baseline"
-                >
-                  <Form.Item name={["email"]} rules={[{ type: "email" }]}>
-                    <Input placeholder="Email" />
-                  </Form.Item>
 
-                  <Form.Item name={["number"]} rules={[{ required: true }]}>
-                    <Input placeholder="Phone number" />
-                  </Form.Item>
-                </Space>
-                <Form.Item className=" ">
-                  <Select placeholder="Subject">
-                    <Select.Option value="Appointment">
-                      Appointment
-                    </Select.Option>
-                    <Select.Option value="Check-Up">Check-Up</Select.Option>
-                    <Select.Option value="demo">Demo</Select.Option>
-                  </Select>
+            <Form
+              {...layout}
+              layout="vertical"
+              onFinish={onFinish}
+              validateMessages={validateMessages}
+            >
+              <div className="grid md:grid-cols-2 gap-x-5">
+                <Form.Item name={["firstname"]} rules={[{ required: true }]}>
+                  <Input placeholder="First Name" />
                 </Form.Item>
-                <Form.Item name="description">
-                  <Input.TextArea />
+                <Form.Item name={["lastname"]} rules={[{ required: true }]}>
+                  <Input placeholder="Last Name" />
                 </Form.Item>
-                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="bg-[#0000e6]"
-                  >
-                    Submit
-                  </Button>
+
+                <Form.Item name={["email"]} rules={[{ type: "email" }]}>
+                  <Input placeholder="Email" />
                 </Form.Item>
-              </Form>
-            </div>
+
+                <Form.Item name={["number"]} rules={[{ required: true }]}>
+                  <Input placeholder="Phone number" />
+                </Form.Item>
+              </div>
+              <Form.Item className=" ">
+                <Select placeholder="Subject">
+                  <Select.Option value="Appointment">Appointment</Select.Option>
+                  <Select.Option value="Check-Up">Check-Up</Select.Option>
+                  <Select.Option value="demo">Demo</Select.Option>
+                </Select>
+              </Form.Item>
+              <Form.Item name="description">
+                <Input.TextArea />
+              </Form.Item>
+              <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="bg-[#0000e6]"
+                >
+                  Submit
+                </Button>
+              </Form.Item>
+            </Form>
           </div>
           <div>
-            <div>FAQS</div>
-            <div className="text-blue-600 text-2xl">
-              Frequently Ask Questions
+            <div className="w-full">
+              <h3>FAQS</h3>
+              <h2 className="text-blue-600 text-2xl">
+                Frequently Ask Questions
+              </h2>
             </div>
-
-            <div>
+            <div className="pt-5">
               <Collapse
                 items={items}
                 defaultActiveKey={["1"]}
@@ -132,14 +122,13 @@ export const Faq = () => {
           </div>
         </div>
       </div>
-      <div>
-        <iframe
-          src="https://maps.google.com/maps?q=comlogik%20business%20systems%20inc.&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          name="myiFrame"
-          height="400"
-          width="100%"
-        ></iframe>
-      </div>
-    </div>
+
+      <iframe
+        src="https://maps.google.com/maps?q=comlogik%20business%20systems%20inc.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        name="myiFrame"
+        height="400"
+        width="100%"
+      ></iframe>
+    </section>
   );
 };

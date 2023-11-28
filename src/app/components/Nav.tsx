@@ -2,7 +2,6 @@
 import { Menu, MenuProps, Button, Drawer, Affix } from "antd";
 import { AiOutlineMenu } from "react-icons/ai";
 import React, { useState } from "react";
-
 import Image from "next/image";
 import { items } from "./NavItems";
 
@@ -29,16 +28,17 @@ export const Nav = () => {
 
   return (
     <section>
-      <div className="hidden sm:block">
+      <nav className="hidden sm:block">
         <Menu
           theme="dark"
           onClick={onClick}
           selectedKeys={[current]}
           mode="horizontal"
           items={items}
-          className="flex justify-center font-bold"
+          className="font-bold flex justify-center"
         />
-      </div>
+      </nav>
+
       <Affix>
         <div className="sm:hidden block bg-white ">
           <div className="flex justify-between">
@@ -65,6 +65,7 @@ export const Nav = () => {
                 open={open}
               >
                 <Menu
+                  // theme="light"
                   onClick={onClose}
                   mode="inline"
                   items={items}

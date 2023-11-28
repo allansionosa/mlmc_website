@@ -3,7 +3,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-blue-800 text-white">
-      <div className=" container py-16 grid gap-5 items-start md:grid-cols-2 lg:grid-cols-5 max-w-screen-xl m-auto">
+      <div className=" container py-16 grid gap-5 items-start md:grid-cols-2 lg:grid-cols-5 max-w-screen-xl m-auto px-3">
         <div className="grid gap-y-10 lg:col-span-2">
           <a href="/">
             <Image

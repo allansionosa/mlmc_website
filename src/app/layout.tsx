@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledRegistry from "./lib/StyledRegistry";
 import { Nav } from "./components/Nav";
-import { ConfigProvider, Affix } from "antd";
+import { ConfigProvider } from "antd";
 import { Top } from "./components/Top";
 import Footer from "./components/home/Footer";
 const inter = Inter({ subsets: ["latin"] });
@@ -29,8 +29,8 @@ export default function RootLayout({
           },
           components: {
             Collapse: {
-              // headerBg: "#0000e6",
-              // colorTextHeading: "#ffffff",
+              headerBg: "#1E40AF",
+              colorTextHeading: "#ffffff",
             },
             Breadcrumb: {
               itemColor: "#FFFFFF",
@@ -47,8 +47,16 @@ export default function RootLayout({
               darkItemSelectedBg: "#d3d5db",
               // darkSubMenuItemBg: "#FFFFFF",
             },
+            // Dropdown: {
+            //   colorBgContainer: "#FFFFFF",
+            //   colorBorder: "#FFFFFF",
+            // },
             Card: {
               colorBgContainer: "#d3d5db",
+            },
+            Form: {
+              colorText: "#FFFFFF",
+              labelColor: "#FFFFFF",
             },
           },
         }}
@@ -60,6 +68,7 @@ export default function RootLayout({
               <Nav />
               {children}
             </main>
+
             <Footer />
           </StyledRegistry>
         </body>

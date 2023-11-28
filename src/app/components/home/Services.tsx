@@ -4,7 +4,7 @@ import Image from "next/image";
 import { lists } from "../ServiceList";
 export const Services = () => {
   return (
-    <div className=" bg-gray-100 mt-10">
+    <section className=" bg-gray-100 py-10">
       <div className="grid justify-items-center">
         <span className="font-serif">CARE YOU BELIEVE IN</span>
         <span className="text-[#0000e6] text-2xl font-serif">Our Services</span>
@@ -43,6 +43,6 @@ export const Services = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

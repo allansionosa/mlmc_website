@@ -17,8 +17,8 @@ const page = () => {
         />
       </div>
 
-      <section className="container my-20 lg:px-48">
-        <ul className="flex justify-center  gap-5 flex-wrap ">
+      <section className="container my-20 max-w-screen-lg m-auto px-5">
+        <ul className="flex gap-5 flex-wrap">
           {otherList.map((list) => (
             <li key={list.id}>
               <Card

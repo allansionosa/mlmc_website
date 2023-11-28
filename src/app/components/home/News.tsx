@@ -16,7 +16,7 @@ export const News = () => {
     setselectedNews(selected ? selected : null);
   };
   return (
-    <div className="px-5 mt-10">
+    <section className="my-10 max-w-screen-lg m-auto px-5">
       <div className="flex flex-col text-center mb-3">
         <div>BETTER INFORMATION BETTER HEALTH</div>
         <div className="text-[#0000e6] text-2xl">News & Events</div>
@@ -105,6 +105,6 @@ export const News = () => {
           View All
         </Link>
       </div>
-    </div>
+    </section>
   );
 };

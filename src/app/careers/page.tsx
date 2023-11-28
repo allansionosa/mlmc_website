@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import BreadCrumb from "../lib/BreadCrumb";
 import { Input } from "antd";
 import { careerList } from "./CareerList";
+import Link from "next/link";
 
 interface CareersItem {
   id: number;
@@ -68,7 +69,7 @@ const page = () => {
                   href="/careers"
                 >
                   <span className="group-hover:underline underline-offset-2 group-hover:text-primary">
-                    View Details
+                    <Link href="/careers/career-name"> View Details</Link>
                   </span>
                 </a>
               </div>
