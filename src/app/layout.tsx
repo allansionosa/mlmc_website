@@ -44,13 +44,8 @@ export default function RootLayout({
               darkItemBg: "#0000e6",
               darkItemHoverColor: "#FFFFFF",
               darkItemSelectedColor: `#ffff00 !important`,
-              darkItemSelectedBg: "#d3d5db",
-              // darkSubMenuItemBg: "#FFFFFF",
             },
-            // Dropdown: {
-            //   colorBgContainer: "#FFFFFF",
-            //   colorBorder: "#FFFFFF",
-            // },
+
             Card: {
               colorBgContainer: "#d3d5db",
             },

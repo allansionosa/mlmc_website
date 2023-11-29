@@ -66,7 +66,7 @@ const page = () => {
                 </div>
                 <a
                   className="grid justify-center py-3 border-2 bg-gray-100  hover:bg-gray-200 flex-shrink-0 lg:border-0 items-center lg:px-5 rounded"
-                  href="/careers"
+                  href="/careers/career-name"
                 >
                   <span className="group-hover:underline underline-offset-2 group-hover:text-primary">
                     <Link href="/careers/career-name"> View Details</Link>

@@ -40,7 +40,7 @@ export const Nav = () => {
       </nav>
 
       <Affix>
-        <div className="sm:hidden block bg-white ">
+        <div className="sm:hidden block bg-white">
           <div className="flex justify-between">
             <div className="">
               <a href="/">
